@@ -33,9 +33,8 @@ data class User (
         val contact: Contact,
         @Type(type = "json")
         @Column(columnDefinition = "json")
-        val links: Links
-) {
-
+        val links: Links)
+{
     class Contact (
             val phone: String,
             val email: String,
@@ -50,7 +49,6 @@ data class User (
     override fun toString(): String {
         return "${this.first_name_rus} ${this.second_name_rus} ${this.lastname1}"
     }
-
 }
 
 /*@OneToMany(mappedBy = "user_id", cascade = arrayOf(CascadeType.ALL), orphanRemoval = true)

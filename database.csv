@@ -111,7 +111,7 @@ CREATE TABLE public.studies
   user_id integer NOT NULL,
   student_id integer NOT NULL,
   course_id integer NOT NULL,
-  modules json not null,
+  modules json,
   lectures json NOT NULL,
   labs json,
   pract json,
@@ -130,6 +130,10 @@ CREATE TABLE public.studies
   ON DELETE NO ACTION,
   CONSTRAINT course_id_foreign FOREIGN KEY (course_id)
   REFERENCES public.courses (course_id) MATCH SIMPLE
+  ON UPDATE NO ACTION
+  ON DELETE NO ACTION,
+  CONSTRAINT teacher_id_foreign FOREIGN KEY (teacher_id)
+  REFERENCES public.teachers (teacher_id) MATCH SIMPLE
   ON UPDATE NO ACTION
   ON DELETE NO ACTION
 )

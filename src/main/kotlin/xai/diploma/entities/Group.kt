@@ -1,5 +1,4 @@
 package xai.diploma.entities
-
 import javax.persistence.*
 
 @Entity
