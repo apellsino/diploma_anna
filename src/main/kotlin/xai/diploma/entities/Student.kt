@@ -7,7 +7,8 @@ import javax.persistence.*
 @Table(name = "students")
 data class Student (
         @Id @GeneratedValue
-        val student_id: Int=0,
+        @Column(name="student_id")
+        val id: Int=0,
         @Column(name = "user_id")
         val userid: Int,
         @Column(name = "group_id")

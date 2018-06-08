@@ -26,6 +26,10 @@ class TeacherController(@Autowired val teacherRepository: TeacherRepository) {
         teacherRepository.deleteAll()
     }
 
+    @GetMapping("/id/{id}")
+    fun findByTeacherId(@PathVariable id:Int)
+            = teacherRepository.findByid(id)
+
     @GetMapping("/user/{user}")
     fun findByUserId(@PathVariable user:Int)
             = teacherRepository.findByuser(user)

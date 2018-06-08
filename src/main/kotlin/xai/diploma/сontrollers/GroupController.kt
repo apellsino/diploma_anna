@@ -26,6 +26,10 @@ class GroupController(@Autowired val groupRepository: GroupRepository) {
         groupRepository.deleteAll()
     }
 
+    @GetMapping("/id/{id}")
+    fun findByGroupId(@PathVariable id:Int)
+            = groupRepository.findByid(id)
+
     @GetMapping("/select/{num}")
     fun findBynum(@PathVariable num:String)
             = groupRepository.findBynum(num)

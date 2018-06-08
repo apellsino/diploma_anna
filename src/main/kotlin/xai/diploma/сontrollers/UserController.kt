@@ -39,6 +39,10 @@ class UserController(@Autowired val userRepository: UserRepository) {
         userRepository.deleteAll()
     }
 
+    @GetMapping("/id/{id}")
+    fun findByUserId(@PathVariable id:Int)
+            = userRepository.findByid(id)
+
     @GetMapping("/selectrus/{lastname1}")
     fun findlastname1(@PathVariable lastname1:String)
             = userRepository.findBylastname1(lastname1)

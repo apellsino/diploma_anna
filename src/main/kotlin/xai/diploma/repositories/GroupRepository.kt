@@ -5,4 +5,5 @@ import org.springframework.data.repository.CrudRepository
 
 interface GroupRepository: CrudRepository<Group, Long> {
     fun findBynum(num: String): Iterable<Group>
+    fun findByid (id: Int): Iterable<Group>
 }

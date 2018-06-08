@@ -67,8 +67,8 @@
     <schema id="14" parent="2" name="public">
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
-      <IntrospectionTimestamp>2018-06-06.23:55:27.353</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1535</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-06-08.15:02:12.497</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1540</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -232,11 +232,11 @@ FAILED</Labels>
     </table>
     <table id="36" parent="14" name="studies">
       <ObjectId>52265</ObjectId>
-      <StateNumber>1535</StateNumber>
+      <StateNumber>1540</StateNumber>
     </table>
     <table id="37" parent="14" name="teachers">
       <ObjectId>52213</ObjectId>
-      <StateNumber>1535</StateNumber>
+      <StateNumber>1540</StateNumber>
     </table>
     <table id="38" parent="14" name="users">
       <ObjectId>52153</ObjectId>
@@ -506,8 +506,7 @@ FAILED</Labels>
     <column id="76" parent="36" name="modules">
       <Position>5</Position>
       <DataType>json|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>1535</StateNumber>
+      <StateNumber>1539</StateNumber>
       <TypeId>114</TypeId>
     </column>
     <column id="77" parent="36" name="lectures">
@@ -595,7 +594,16 @@ FAILED</Labels>
       <RefKeyName>course_id_primary</RefKeyName>
       <RefColNames>course_id</RefColNames>
     </foreign-key>
-    <column id="89" parent="37" name="teacher_id">
+    <foreign-key id="89" parent="36" name="teacher_id_foreign">
+      <ObjectId>52290</ObjectId>
+      <ColNames>teacher_id</ColNames>
+      <RefTableId>52213</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>teachers</RefTableName>
+      <RefKeyName>teacher_primary_key</RefKeyName>
+      <RefColNames>teacher_id</RefColNames>
+    </foreign-key>
+    <column id="90" parent="37" name="teacher_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -604,39 +612,39 @@ FAILED</Labels>
       <TypeId>23</TypeId>
       <SequenceName>teachers_teacher_id_seq</SequenceName>
     </column>
-    <column id="90" parent="37" name="user_id">
+    <column id="91" parent="37" name="user_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="91" parent="37" name="dept">
+    <column id="92" parent="37" name="dept">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="92" parent="37" name="job">
+    <column id="93" parent="37" name="job">
       <Position>4</Position>
       <DataType>job|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>52202</TypeId>
     </column>
-    <index id="93" parent="37" name="teacher_primary_key">
+    <index id="94" parent="37" name="teacher_primary_key">
       <ObjectId>52217</ObjectId>
       <ColNames>teacher_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="94" parent="37" name="teacher_primary_key">
+    <key id="95" parent="37" name="teacher_primary_key">
       <ObjectId>52218</ObjectId>
       <ColNames>teacher_id</ColNames>
       <UnderlyingIndexName>teacher_primary_key</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="95" parent="37" name="user_id_foreign">
+    <foreign-key id="96" parent="37" name="user_id_foreign">
       <ObjectId>52219</ObjectId>
       <ColNames>user_id</ColNames>
       <RefTableId>52153</RefTableId>
@@ -645,7 +653,7 @@ FAILED</Labels>
       <RefKeyName>user_id_primary</RefKeyName>
       <RefColNames>user_id</RefColNames>
     </foreign-key>
-    <column id="96" parent="38" name="user_id">
+    <column id="97" parent="38" name="user_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -654,93 +662,93 @@ FAILED</Labels>
       <TypeId>23</TypeId>
       <SequenceName>users_user_id_seq</SequenceName>
     </column>
-    <column id="97" parent="38" name="first_name_rus">
+    <column id="98" parent="38" name="first_name_rus">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="98" parent="38" name="second_name_rus">
+    <column id="99" parent="38" name="second_name_rus">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="99" parent="38" name="last_name_rus">
+    <column id="100" parent="38" name="last_name_rus">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="100" parent="38" name="first_name_ukr">
+    <column id="101" parent="38" name="first_name_ukr">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="101" parent="38" name="second_name_ukr">
+    <column id="102" parent="38" name="second_name_ukr">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="102" parent="38" name="last_name_ukr">
+    <column id="103" parent="38" name="last_name_ukr">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="103" parent="38" name="first_name_eng">
+    <column id="104" parent="38" name="first_name_eng">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="104" parent="38" name="second_name_eng">
+    <column id="105" parent="38" name="second_name_eng">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="105" parent="38" name="last_name_eng">
+    <column id="106" parent="38" name="last_name_eng">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1535</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="106" parent="38" name="born_date">
+    <column id="107" parent="38" name="born_date">
       <Position>11</Position>
       <DataType>date|0s</DataType>
       <StateNumber>1535</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="107" parent="38" name="contact">
+    <column id="108" parent="38" name="contact">
       <Position>12</Position>
       <DataType>json|0s</DataType>
       <StateNumber>1535</StateNumber>
       <TypeId>114</TypeId>
     </column>
-    <column id="108" parent="38" name="links">
+    <column id="109" parent="38" name="links">
       <Position>13</Position>
       <DataType>json|0s</DataType>
       <StateNumber>1535</StateNumber>
       <TypeId>114</TypeId>
     </column>
-    <index id="109" parent="38" name="user_id_primary">
+    <index id="110" parent="38" name="user_id_primary">
       <ObjectId>52160</ObjectId>
       <ColNames>user_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="110" parent="38" name="user_id_primary">
+    <key id="111" parent="38" name="user_id_primary">
       <ObjectId>52161</ObjectId>
       <ColNames>user_id</ColNames>
       <UnderlyingIndexName>user_id_primary</UnderlyingIndexName>

@@ -6,5 +6,6 @@ import org.springframework.data.repository.CrudRepository
 interface TeacherRepository: CrudRepository<Teacher, Long> {
     fun findByuser(user: Int): Iterable<Teacher>
     fun findBydept(dept: Int): Iterable<Teacher>
+    fun findByid (id: Int): Iterable<Teacher>
 }
 

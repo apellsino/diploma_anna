@@ -14,7 +14,8 @@ import javax.persistence.*
 @Table(name = "users")
 data class User (
         @Id @GeneratedValue
-        val user_id: Int = 0,
+        @Column (name="user_id")
+        val id: Int = 0,
         val first_name_rus: String,
         val second_name_rus: String,
         @Column (name="last_name_rus")

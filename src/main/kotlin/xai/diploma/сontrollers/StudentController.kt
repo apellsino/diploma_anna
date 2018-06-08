@@ -47,4 +47,8 @@ class StudentController(@Autowired val studentRepository: StudentRepository) {
     fun findDept(@PathVariable dept:Int)
             = studentRepository.findBydept(dept)
 
+    @GetMapping("/id/{id}")
+    fun findByStudentId(@PathVariable id:Int)
+            = studentRepository.findByid(id)
+
 }

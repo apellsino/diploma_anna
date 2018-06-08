@@ -6,7 +6,8 @@ import javax.persistence.*
 @Table(name = "teachers")
 data class Teacher(
         @Id @GeneratedValue
-        val teacher_id: Int=0,
+        @Column(name = "teacher_id")
+        val id: Int=0,
         @Column(name = "user_id")
         val user: Int,
         val dept: Int,

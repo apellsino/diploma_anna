@@ -5,7 +5,8 @@ import javax.persistence.*
 @Table(name = "groups")
 data class Group (
         @Id @GeneratedValue
-        val group_id: Long=0,
+        @Column(name="group_id")
+        val id: Int=0,
         val num: String,
         val specialty: String,
         val year: Int
